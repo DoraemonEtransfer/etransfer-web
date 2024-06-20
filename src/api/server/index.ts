@@ -3,6 +3,7 @@ import service from 'api/axios';
 import { DEFAULT_METHOD } from 'api/list';
 import { BaseConfig, UrlObj, RequestConfig } from 'api/types';
 import { spliceUrl, getRequestConfig } from 'api/utils';
+import { ETransferHost } from 'constants/index';
 
 const myServer = new Function();
 
@@ -43,6 +44,7 @@ myServer.prototype.send = function (base: BaseConfig, config: RequestConfig) {
   }
   return service({
     ...axiosConfig,
+    baseURL: ETransferHost,
     url: url || spliceUrl(typeof base === 'string' ? base : base.target, query),
     method,
     cancelToken: source.token,
