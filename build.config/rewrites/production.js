@@ -13,7 +13,7 @@ const GraphqlHostV2 =
 module.exports = [
   {
     source: '/api/etransfer/:path*',
-    destination: `${ETransferHost}/api/app/:path*`,
+    destination: `${ETransferHost}/api/etransfer/:path*`,
   },
   {
     source: '/connect/:path*',
